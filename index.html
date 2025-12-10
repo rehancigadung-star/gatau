@@ -31,10 +31,6 @@
             z-index: 9999;
             top: 50%;
             left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -moz-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -o-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             transition: 1s;
         }
@@ -48,27 +44,33 @@
 
 <body>
     <canvas id="canvas-matrix" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
-    <!-- <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas> -->
     <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
     <div class="overlay">
         <div class="tabs">
-            <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span
-                    class="tabs-label">Share</span></div>
+            <div class="tabs-labels">
+                <span class="tabs-label">Commands</span>
+                <span class="tabs-label">Info</span>
+                <span class="tabs-label">Share</span>
+            </div>
 
             <div class="tabs-panels">
-                <ul class="tabs-panel commands">
-                </ul>
+                <ul class="tabs-panel commands"></ul>
             </div>
         </div>
     </div>
+
     <canvas id="pinkboard" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
 
     <script src="js/index.js"></script>
     <script src="js/heart.js"></script>
     <script src="js/matrix.js"></script>
+
     <div class="namebox" style="opacity: 0;">
         <h1 style="font-family: 'Comic Sans MS', cursive, sans-serif;">I Love&#10084;&#65039;You</h1>
     </div>
+
+    <!-- AUDIO AUTOPLAY -->
+    <audio id="bg-music" src="audio/laguku.mp3" autoplay loop></audio>
 
 </body>
 

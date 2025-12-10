@@ -38,6 +38,29 @@
         .namebox h1 {
             margin: 0 auto;
         }
+
+        /* tombol play */
+        #music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            padding: 10px 18px;
+            background: #ff5ba5;
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff5ba5;
+            transition: 0.3s;
+        }
+
+        #music-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #ff85c1;
+        }
     </style>
 
 </head>
@@ -70,19 +93,21 @@
         <h1 style="font-family: 'Comic Sans MS', cursive, sans-serif;">I Love&#10084;&#65039;You</h1>
     </div>
 
-    <!-- AUDIO AUTOPLAY -->
-    <audio id="bg-music" src="audio/laguku.mp3" autoplay loop></audio>
+    <!-- MUSIC FILE -->
+    <audio id="bg-music" src="audio/laguku.mp3" loop></audio>
 
-    <!-- JS AUTOPLAY FIX FOR MOBILE -->
+    <!-- TOMBOL PLAY -->
+    <button id="music-btn">▶ Play Music</button>
+
     <script>
-        const bgMusic = document.getElementById("bg-music");
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("music-btn");
 
-        document.addEventListener("DOMContentLoaded", () => {
-            bgMusic.play().catch(() => {
-                document.body.addEventListener("touchstart", () => {
-                    bgMusic.play();
-                }, { once: true });
-            });
+        btn.addEventListener("click", () => {
+            music.play();
+            btn.innerText = "🎵 Playing";
+            btn.style.background = "#4CAF50";
+            btn.style.boxShadow = "0 0 10px #4CAF50";
         });
     </script>
 
